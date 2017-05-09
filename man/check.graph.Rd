@@ -6,13 +6,18 @@
 \usage{
 check.graph(x)
 }
+\arguments{
+\item{x}{This check graphs to confirm that it is a closed loop logic}
+}
 \description{
-Check graph
+Simple check function
 }
 \details{
-This check graphs to confirm that it is a closed loop logic
+To ensure that it is a closed loop logic
+}
+\examples{
+check.graph(circuitOne(1))
 }
 \author{
 Aiden Loe
 }
-

@@ -9,4 +9,3 @@ v.labels(z = NULL, newValue)
 \author{
 Aiden Loe
 }
-

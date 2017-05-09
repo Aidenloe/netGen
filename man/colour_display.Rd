@@ -12,4 +12,3 @@ Selecting the colour display of the nodes
 \author{
 Aiden Loe
 }
-

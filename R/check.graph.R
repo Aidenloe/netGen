@@ -1,10 +1,12 @@
-#' Check graph
-#'
+#' @export
 #' @author Aiden Loe
-#' @details
-#' This check graphs to confirm that it is a closed loop logic
+#' @details To ensure that it is a closed loop logic
+#' @description Simple check function
+#' @param x This check graphs to confirm that it is a closed loop logic
 #' @export
 #' @title check.graph
+#' @examples
+#' check.graph(circuitOne(1))
 
 check.graph <- function(x){
 	#ensure that it is not directed, is not weighted, is not connected

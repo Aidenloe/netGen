@@ -42,4 +42,3 @@ Creating the the plot for the logic map.
 \author{
 Aiden Loe
 }
-

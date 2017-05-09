@@ -35,4 +35,3 @@
 
 \item{png_name}{This is the input of the name}
 }
-

@@ -16,4 +16,3 @@ number 1:10
 \author{
 Aiden Loe
 }
-

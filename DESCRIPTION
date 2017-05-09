@@ -1,16 +1,15 @@
-Package: AIG
+Package: netGen
 Type: Package
 Title: Automatic Item Generator
 Version: 0.1
-Date: 2016-12-13
-Author: Aiden Loe
-Maintainer: Aiden Loe <bsl28@cam.ac.uk>
-Description: Creating spatial planning tasks. 
+Date: 2017-05-08
+Author: Bao Sheng Loe (Aiden) [aut,cre,cph],
+Maintainer: Bao Sheng Loe (Aiden) <bsl28@cam.ac.uk>
+Description: A network generator that creates different types of network mazes. 
 License: GPL-3
 Imports:
     igraph,
     mgcv,
     stats
 LazyData: TRUE
-RoxygenNote: 5.0.1
-
+RoxygenNote: 6.0.1
