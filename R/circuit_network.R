@@ -2,7 +2,7 @@
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family one (Sample item 1)
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' @author Aiden Loe
 #' @title Item Family One (Circuit)
 #' @examples
@@ -23,7 +23,7 @@ circuitOne <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family two
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' @author Aiden Loe
 #' @title Item Family Two (Circuit)
 #' @examples
@@ -41,7 +41,7 @@ circuitTwo <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family three
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' @author Aiden Loe
 #' @title Item Family Three (Circuit)
 #' @examples
@@ -56,8 +56,8 @@ circuitThree <- function(value){
 #' @export
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
-#' @description This function generates the html template of the item family four
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @description This function generates the html template of the item family four.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' @author Aiden Loe
 #' @title Item Family Four (Circuit)
 #' @examples
@@ -74,7 +74,7 @@ circuitFour <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family five.
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' Different even number nodes (Radical 2). 1 node with 4 edges (Sample Item 2). Minimunm is 5 nodes.
 #' @author Aiden Loe
 #' @title Item Family Five (Circuit)
@@ -93,7 +93,7 @@ circuitFive <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family six
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' Different even number nodes (Radical 2). 2 nodes with 4 edges
 #' @author Aiden Loe
 #' @title Item Family Six (Circuit)
@@ -111,7 +111,7 @@ circuitSix <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family seven
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' Different even number nodes (Radical 2). 3 nodes with 4 edges
 #' @author Aiden Loe
 #' @title Item Family Seven (Circuit)
@@ -128,7 +128,7 @@ circuitSeven <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family eight
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' Different even number nodes (Radical 2). 1 node with 6 edges, 2 nodes with 4 edges, the rest with 2 edges
 #' @author Aiden Loe
 #' @title Item Family Eight (Circuit)
@@ -145,7 +145,7 @@ circuitEight <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family eight
-#' @details This function creates a plot with the network blueprint into your working directory.
+#' @details This function creates the coordinates between the nodes of the network maze.
 #' Different even number nodes (Radical 2). 1 node with 6 edges, 1 node with 4 edges, the rest with 2 edges.
 #' @author Aiden Loe
 #' @title Item Family Nine (Circuit)

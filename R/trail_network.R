@@ -2,7 +2,7 @@
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family one (6 moves)
-#' @details This function creates a plot with the network blueprint into your working directory. Same uneven number of nodes
+#' @details This function creates the coordinates between the nodes of the network maze. Same uneven number of nodes
 #' @author Aiden Loe
 #' @title Item Family One (Trail)
 #' @examples
@@ -20,7 +20,7 @@ trailOne <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family two (10 moves)
-#' @details This function creates a plot with the network blueprint into your working directory. Same uneven number of nodes
+#' @details This function creates the coordinates between the nodes of the network maze. Same uneven number of nodes
 #' @author Aiden Loe
 #' @title Item Family Two (Trail)
 #' @examples
@@ -38,7 +38,7 @@ trailTwo <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family three (10 moves)
-#' @details This function creates a plot with the network blueprint into your working directory. Same uneven number of nodes
+#' @details This function creates the coordinates between the nodes of the network maze. Same uneven number of nodes
 #' @author Aiden Loe
 #' @title Item Family Three (Trail)
 #' @examples
@@ -55,7 +55,7 @@ trailThree <- function(value){
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family four (9 moves)
-#' @details This function creates a plot with the network blueprint into your working directory. Same uneven number of nodes
+#' @details This function creates the coordinates between the nodes of the network maze. Same uneven number of nodes
 #' @author Aiden Loe
 #' @title Item Family Four (Trail)
 #' @examples
@@ -74,7 +74,7 @@ trailFour <- function(value) {
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family five (13 moves)
-#' @details This function creates a plot with the network blueprint into your working directory. Same uneven number of nodes
+#' @details This function creates the coordinates between the nodes of the network maze. Same uneven number of nodes
 #' @author Aiden Loe
 #' @title Item Family Five (Trail)
 #' @examples
@@ -92,7 +92,7 @@ trailFive <- function(value) {
 #' @importFrom igraph graph_from_literal
 #' @param value seed value
 #' @description This function generates the html template of the item family six (10 moves)
-#' @details This function creates a plot with the network blueprint into your working directory. Same uneven number of nodes
+#' @details This function creates the coordinates between the nodes of the network maze. Same uneven number of nodes
 #' @author Aiden Loe
 #' @title Item Family Six (Trail)
 #' @examples
