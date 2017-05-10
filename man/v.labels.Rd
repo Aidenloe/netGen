@@ -6,6 +6,19 @@
 \usage{
 v.labels(z = NULL, newValue)
 }
+\arguments{
+\item{z}{This is the names input. The more names the better.}
+
+\item{newValue}{is the number of names you want to randomly select.}
+}
+\description{
+. This is for people to choose their own names to put in the node.
+}
+\details{
+By default, some name will be provided. However, it may be better to have your own names if you wish.
+}
 \author{
+Aiden Loe
+
 Aiden Loe
 }

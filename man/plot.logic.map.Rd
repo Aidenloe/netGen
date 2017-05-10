@@ -10,7 +10,7 @@
   layout = layout_with_dh, xlab = ".", ylab = ".", cex.lab = 0.1)
 }
 \arguments{
-\item{x}{This is the logic of the object we are goig to plot}
+\item{x}{This is the logic of the object we are goig to plot which is based on \code{closedMaps}.}
 
 \item{png}{Tells you to print to your working directory automatically or not.}
 
@@ -37,8 +37,15 @@
 \item{cex.lab}{The size of the labels}
 }
 \description{
+To make it easier to plot the map in a png format.
+}
+\details{
 Creating the the plot for the logic map.
+
+Most of the internal functions are based on the igraph packge. This acts as a wrapper to the functions to make it easier for people to redesign the plots. However, the changes made here do not truly affect the way it is generated in html.
 }
 \author{
+Aiden Loe
+
 Aiden Loe
 }

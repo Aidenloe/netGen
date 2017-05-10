@@ -25,7 +25,7 @@
 #'
 
 # setwd("~/desktop")
-# E.trail <- nodeLogic(value = 8, type= "trail", itemFamily= 1)
+ #E.trail <- nodeLogic(value = 8, type= "trail", itemFamily= 1)
 # netHTML2arrows(E.trail)
 
 netHTML2arrows <- function(nodeLogic=NULL, wd=NULL){

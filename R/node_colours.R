@@ -1,9 +1,11 @@
-#' Selecting the colour display of the nodes
 #' @export
 #' @author Aiden Loe
-
-# setwd("~/Dropbox/Cambridge/PhD/ICAR/AIG/MAP")
-
+#' @description Selecting the colour display of the nodes
+#' @details Selecting the colour display of the nodes. Again, not sure if this is necessary anymore since it does not affect the colour of the html, only the png image will be affected.
+#' @param base.colour This is the base colour selection.
+#' @param start.colour This is the start colour selection.
+#' @param end.colour This is the end colour selection.
+#' @title Colour Display
 
 # Create class of object
 # select colour_display
