@@ -45,9 +45,9 @@ netHTML2arrows <- function(nodeLogic=NULL, wd=NULL){
 
 htmlfile = file.path(paste0(wd, "/maze.html"))
 button<- netGen:::css()
+cat("\n<html><head>",file=htmlfile)
 cat(button, append=TRUE, file=htmlfile)
-
-cat("\n<html></head>", append=TRUE, file = htmlfile)
+cat("\n</head>", append=TRUE, file = htmlfile)
 cat("\n<br>", append=TRUE, file = htmlfile)
 cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:20px;\"><span style=\"color: white;\">Level {{level}} out of {{t_question}}.</span></p>",append=TRUE, file = htmlfile)
 cat("\n<body>", append = TRUE, file = htmlfile)
