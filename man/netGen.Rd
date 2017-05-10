@@ -6,8 +6,8 @@
 \alias{netGen-package}
 \title{netGen: A package for generating network type maze}
 \description{
-The mazeGen package provides functions to generate the Network Mazes.
-The item families are not designed to be increasing difficulty. They are just different at this stage.
+The mazeGen package provides functions to generate the Network Mazes. \cr
+The item families are not designed to be increasing difficulty. They are just different at this stage. \cr
 This is still at its early stages.
 }
 \references{

@@ -16,7 +16,7 @@ Simple check function
 To ensure that it is a closed loop logic
 }
 \examples{
-check.graph(circuitOne(1))
+check.graph(nodeLogic(value = 1, type= "circuit", itemFamily= 1))
 }
 \author{
 Aiden Loe

@@ -4,6 +4,7 @@
 #display:inline-block;
 css <- function(){
 button <- paste0("
+                <style>
                  html {height: 100%}
 
                  #center {
@@ -69,6 +70,7 @@ button <- paste0("
                  height:550px;
                  width: 600px;
                  }
+                </style>
                  ")}
 
 

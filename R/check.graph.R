@@ -6,7 +6,7 @@
 #' @export
 #' @title check.graph
 #' @examples
-#' check.graph(circuitOne(1))
+#' check.graph(nodeLogic(value = 1, type= "circuit", itemFamily= 1))
 
 check.graph <- function(x){
 	#ensure that it is not directed, is not weighted, is not connected
