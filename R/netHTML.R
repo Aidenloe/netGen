@@ -6,12 +6,14 @@
 #' @importFrom graphics grconvertY
 #' @importFrom graphics plot
 #' @param nodeLogic This is the connections between the nodes.
-#' @param wd is the working directory to save the HTML source code in. If not given, the file will be saved in the default working directory.
+#' @param wd This is the working directory to save the HTML source code in. If not given, the file will be saved in the default working directory.
+#' @param names This allows you to put in your own names in the nodes when generating the maze.
 #' @description This function generates an network Maze with at most 2 arrows.
 #' @details This function creates a maze and is saved into your working directory. At most up to 2 arrows per maze is generated.
 #' @author Aiden Loe
 #' @title Generate Network Maze (No arrows)
 #' @examples
+#'
 #'#create node logic
 #'logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 1)
 #'
@@ -21,12 +23,12 @@
 #'
 #' #Generate item
 #' set.seed(1)
-#' netHTML(logic, wd=NULL)
+#' netHTML(logic, wd=NULL, names=NULL)
 #'
 #'
 
 
-netHTML <- function(nodeLogic= NULL, wd = NULL ){
+netHTML <- function(nodeLogic= NULL, wd = NULL, names=NULL ){
   if(is.null(wd)){
     warnings("Please insert nodeLogic.")
   }
@@ -61,7 +63,7 @@ cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande
 
 
 ####### Create Node coordinates
-o <- suppressWarnings(logicMaps(nodeLogic ,base.colour=3, start.colour=9,end.colour= 4,names=NULL,newValue=9,default.colour=FALSE, no.label=FALSE))
+o <- suppressWarnings(logicMaps(nodeLogic ,base.colour=3, start.colour=9,end.colour= 4,names=names,newValue=9,default.colour=FALSE, no.label=FALSE))
 o
 
 #Must normalise coordinates

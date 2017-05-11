@@ -4,12 +4,14 @@
 \alias{netHTML}
 \title{Generate Network Maze (No arrows)}
 \usage{
-netHTML(nodeLogic = NULL, wd = NULL)
+netHTML(nodeLogic = NULL, wd = NULL, names = NULL)
 }
 \arguments{
 \item{nodeLogic}{This is the connections between the nodes.}
 
-\item{wd}{is the working directory to save the HTML source code in. If not given, the file will be saved in the default working directory.}
+\item{wd}{This is the working directory to save the HTML source code in. If not given, the file will be saved in the default working directory.}
+
+\item{names}{This allows you to put in your own names in the nodes when generating the maze.}
 }
 \description{
 This function generates an network Maze with at most 2 arrows.
@@ -18,6 +20,7 @@ This function generates an network Maze with at most 2 arrows.
 This function creates a maze and is saved into your working directory. At most up to 2 arrows per maze is generated.
 }
 \examples{
+
 #create node logic
 logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 1)
 
@@ -27,7 +30,7 @@ logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 1)
 
 #Generate item
 set.seed(1)
-netHTML(logic, wd=NULL)
+netHTML(logic, wd=NULL, names=NULL)
 
 
 }

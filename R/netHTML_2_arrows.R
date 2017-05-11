@@ -7,13 +7,18 @@
 #' @importFrom graphics plot
 #' @param nodeLogic This is the connections between the nodes.
 #' @param wd is the working directory to save the HTML source code in. If not given, the file will be saved in the default working directory.
+#' @param names This allows you to put in your own names in the nodes when generating the maze.
 #' @description This function generates an network Maze with at most 2 arrows.
 #' @details This function creates a maze and is saved into your working directory. At most up to 2 arrows per maze is generated.
 #' @author Aiden Loe
 #' @title Generate Network Maze (2 arrows)
 #' @examples
-#'#create node logic
-#'logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 1)
+#' #create random names
+#' countries <- c("Croatia","Cyprus","Denmark","Finland","France","Germany",
+#' "Greece","Hungary","Iceland","UK","US")
+#'
+#' #create node logic
+#' logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 1)
 #'
 #' #Folder to save html/
 #' #setwd("~/desktop")
@@ -21,12 +26,12 @@
 #'
 #' #Generate item
 #' set.seed(1)
-#' netHTML2arrows(logic, wd=NULL)
+#' netHTML2arrows(logic, wd=NULL, names = countries)
 #'
 #'
 
 
-netHTML2arrows <- function(nodeLogic=NULL, wd=NULL){
+netHTML2arrows <- function(nodeLogic=NULL, wd=NULL, names=NULL){
 
   if(is.null(wd)){
     warnings("Please insert nodeLogic.")
@@ -56,10 +61,11 @@ cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande
 
 
 ####### Create Node coordinates
-countries <- c("Albania","Andorra","Armenia","Austria","Azerbajian","Belarus","Belgium","Bulgaria","Croatia","Cyprus","Denmark","Estonia","Finland","France","Georgia","Germany","Greece","Hungary","Iceland","Ireland","Italy","Kazakhstan","Kosovo","Latvia","Malta","Moldova","Monaco","Norway","Poland","Portugal","Romania","Russia","Serbia","Slovakia","Solvenia","Spain","Sweden","Turkey","Ukraine","UK","US")
+
+# countries <- c("Albania","Andorra","Armenia","Austria","Azerbajian","Belarus","Belgium","Bulgaria","Croatia","Cyprus","Denmark","Estonia","Finland","France","Georgia","Germany","Greece","Hungary","Iceland","Ireland","Italy","Kazakhstan","Kosovo","Latvia","Malta","Moldova","Monaco","Norway","Poland","Portugal","Romania","Russia","Serbia","Slovakia","Solvenia","Spain","Sweden","Turkey","Ukraine","UK","US")
 
 #countries<- as.data.frame(countries)
-o <- suppressWarnings(logicMaps(nodeLogic ,base.colour=3, start.colour=9,end.colour= 9,names=countries,newValue=9,default.colour=FALSE, no.label=FALSE))
+o <- suppressWarnings(logicMaps(nodeLogic ,base.colour=3, start.colour=9,end.colour= 9,names=names,newValue=9,default.colour=FALSE, no.label=FALSE))
 o
 #Other graph layouts: add_layout_; layout.bipartite, layout_as_bipartite; as_star, layout.star, layout_as_star; as_tree, layout_as_tree; component_wise; in_circle, layout_in_circle; layout.auto, layout_nicely, nicely; layout.davidson.harel, layout_with_dh, with_dh; layout.gem, layout_with_gem, with_gem; layout.graphopt, layout_with_graphopt, with_graphopt; layout.grid, layout.grid.3d, layout.grid.3d, layout_on_grid, on_grid; layout.mds, layout_with_mds, with_mds; layout.merge, layout_components, merge_coords, piecewise.layout, piecewise.layout; layout.norm, norm_coords; layout.sugiyama, layout_with_sugiyama, with_sugiyama; layout_on_sphere, on_sphere; layout_randomly, randomly; layout_with_fr, with_fr; layout_with_kk, with_kk; layout_with_lgl, with_lgl; normalize
 
