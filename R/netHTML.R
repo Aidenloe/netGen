@@ -28,7 +28,7 @@
 #'
 
 
-netHTML <- function(nodeLogic= NULL, wd = NULL, names=NULL ){
+netHTML <- function(nodeLogic= NULL, wd = NULL, names=NULL){
   if(is.null(wd)){
     warnings("Please insert nodeLogic.")
   }
@@ -63,7 +63,7 @@ cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande
 
 
 ####### Create Node coordinates
-o <- suppressWarnings(logicMaps(nodeLogic ,base.colour=3, start.colour=9,end.colour= 4,names=names,newValue=9,default.colour=FALSE, no.label=FALSE))
+o <- suppressWarnings(logicMap(nodeLogic ,base.colour=3, start.colour=9,end.colour= 4,names=names,newValue=9,default.colour=FALSE, no.label=FALSE))
 o
 
 #Must normalise coordinates

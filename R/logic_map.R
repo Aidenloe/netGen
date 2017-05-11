@@ -15,14 +15,14 @@
 #' @author Aiden Loe
 #' @details
 #' This allow us to create a map with close looped form
-#' @title Logic Maps
+#' @title Logic Map
 #' @examples
 #' logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 1)
 #' names <- c('a','b','c','d','e','f','g')
-#' logicMaps(logic, no.label=FALSE, names=names)
+#' logicMap(logic, no.label=FALSE, names=names)
 
 ### Trails and Circuits
-logicMaps <- function(x ,base.colour, start.colour, end.colour, names=NULL, newValue, default.colour=TRUE, no.label=FALSE) {
+logicMap <- function(x ,base.colour, start.colour, end.colour, names=NULL, newValue, default.colour=TRUE, no.label=FALSE) {
 	#Check graph
 	cg <- check.graph(x)
 	#Stop if it's neither class
