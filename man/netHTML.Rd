@@ -26,6 +26,7 @@ logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 1)
 #filePath<- getwd()
 
 #Generate item
+set.seed(1)
 netHTML(logic, wd=NULL)
 
 

@@ -20,13 +20,11 @@
 #' #filePath<- getwd()
 #'
 #' #Generate item
+#' set.seed(1)
 #' netHTML2arrows(logic, wd=NULL)
 #'
 #'
 
-# setwd("~/desktop")
- #E.trail <- nodeLogic(value = 8, type= "trail", itemFamily= 1)
-# netHTML2arrows(E.trail)
 
 netHTML2arrows <- function(nodeLogic=NULL, wd=NULL){
 
@@ -44,7 +42,7 @@ netHTML2arrows <- function(nodeLogic=NULL, wd=NULL){
   }
 
 htmlfile = file.path(paste0(wd, "/maze.html"))
-button<- netGen:::css()
+button<- css()
 cat("\n<html><head>",file=htmlfile)
 cat(button, append=TRUE, file=htmlfile)
 cat("\n</head>", append=TRUE, file = htmlfile)
@@ -60,8 +58,8 @@ cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande
 ####### Create Node coordinates
 countries <- c("Albania","Andorra","Armenia","Austria","Azerbajian","Belarus","Belgium","Bulgaria","Croatia","Cyprus","Denmark","Estonia","Finland","France","Georgia","Germany","Greece","Hungary","Iceland","Ireland","Italy","Kazakhstan","Kosovo","Latvia","Malta","Moldova","Monaco","Norway","Poland","Portugal","Romania","Russia","Serbia","Slovakia","Solvenia","Spain","Sweden","Turkey","Ukraine","UK","US")
 
-countries<- as.data.frame(countries)
-o <- suppressWarnings(closedMaps(nodeLogic ,base.colour=3, start.colour=9,end.colour= 9,z=countries,newValue=9,default.colour=FALSE, edge.value=0, no.label=FALSE))
+#countries<- as.data.frame(countries)
+o <- suppressWarnings(logicMaps(nodeLogic ,base.colour=3, start.colour=9,end.colour= 9,names=countries,newValue=9,default.colour=FALSE, no.label=FALSE))
 o
 #Other graph layouts: add_layout_; layout.bipartite, layout_as_bipartite; as_star, layout.star, layout_as_star; as_tree, layout_as_tree; component_wise; in_circle, layout_in_circle; layout.auto, layout_nicely, nicely; layout.davidson.harel, layout_with_dh, with_dh; layout.gem, layout_with_gem, with_gem; layout.graphopt, layout_with_graphopt, with_graphopt; layout.grid, layout.grid.3d, layout.grid.3d, layout_on_grid, on_grid; layout.mds, layout_with_mds, with_mds; layout.merge, layout_components, merge_coords, piecewise.layout, piecewise.layout; layout.norm, norm_coords; layout.sugiyama, layout_with_sugiyama, with_sugiyama; layout_on_sphere, on_sphere; layout_randomly, randomly; layout_with_fr, with_fr; layout_with_kk, with_kk; layout_with_lgl, with_lgl; normalize
 
@@ -79,12 +77,13 @@ coordinates.1 <- layout.norm(coordinates)
 
 # Plot Graph
 #save empty .png
-png(file="map.png", height=1000, width=1000)
+png(filename="map.png", height=1000, width=1000)
 #plot graph, png must always be forced.
-netGen:::plot.logic.map(o, png=FALSE, layout = coordinates.1, height=1000, width=1000, v.size=10, vertex.label.cex=0.5,vertex.shape="square", xlab=".", ylab='.',cex.lab=0.1) # plot using desired coordinates)
-netGen:::plot.logic.map(o, layout=coordinates.1)
-
-
+plot.igraph(o,
+            layout=layout_with_dh,
+            vertex.shape='square',
+            vertex.size=10,
+            vertex.label.cex=0.5) # plot using desired coordinates)
 
 # combind vector of coordinates
 coord. <- cbind(grconvertX(coordinates.1[, 1], "user", "device"), cbind(grconvertY(coordinates.1[, 2], "user", "device")))
@@ -236,7 +235,7 @@ edge.list
 
 cat("\n<script>", append = TRUE, file = htmlfile)
 cat(edge.list, append=TRUE, file=htmlfile)
-javaScript <- netGen:::javaScript(arrowDirect, rowNumber)
+javaScript <- javaScript(arrowDirect, rowNumber)
 cat(javaScript, append=TRUE, file=htmlfile)
 
 

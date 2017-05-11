@@ -1,61 +1,34 @@
-#' Creating the the plot for the logic map.
-#' @author Aiden Loe
-#' @export
-#' @exportPattern ("^[^\\.]")
-#' @exportPattern (".")
-#' @importFrom graphics plot
-#' @title plot.logic.map
-#' @description To make it easier to plot the map in a png format.
-#' @details Most of the internal functions are based on the igraph packge. This acts as a wrapper to the functions to make it easier for people to redesign the plots. However, the changes made here do not truly affect the way it is generated in html.
-#' @param x This is the logic of the object we are goig to plot which is based on \code{closedMaps}.
-#' @param png Tells you to print to your working directory automatically or not.
-#' @param v.size Is the size of the vertice
-#' @param height This is the height of the image
-#' @param width This is the width of the image
-#' @param seed This will always result in the same graph
-#' @param png_name This is the input of the name
-#' @param vertex.shape This determines the shape of the vertex shape
-#' @param vertex.label.cex This is the size of the vertex label
-#' @param layout Layout of the graph which graph
-#' @param xlab The label of the x coordinates
-#' @param ylab The label of the y coordinates
-#' @param cex.lab The size of the labels
-#' @author Aiden Loe
+#' Creating the the plot for the logic map.#'
+#'#' @author Aiden Loe
+#'#' @export
+#'#' @importFrom graphics plot
+#'#' @title plot.logic.map
+#'#' @description To make it easier to plot the map in a png format.
+#'#' @details Most of the internal functions are based on the igraph packge. This acts as a wrapper to the functions to make it easier for people to redesign the plots. However, the changes made here do not truly affect the way it is generated in html.
+#'#' @param x This is the logic of the object we are goig to plot which is based on \code{closedMaps}.
+#'#' @param seed This will always result in the same graph
+#'#' @param v.size Is the size of the vertice
+#'#' @param vertex.shape This determines the shape of the vertex shape
+#'#' @param vertex.label.cex This is the size of the vertex label
+#'#' @param layout Layout of the graph which graph
+#'#' @author Aiden Loe
+#'#' @examples
+#' x <-  nodeLogic(2,"trail", 2)
+#' plot.logic.map(x,seed = NULL, v.size = 15, layout =layout_with_dh)
+
+# plot.logic.map <- function(x,seed=NULL, v.size=10,vertex.shape="square",vertex.label.cex=0.5 ,layout=layout_with_dh){
+#
+# 	if(!is.null(seed))
+# 		set.seed(seed)
+# 		plot(x,
+# 		layout=layout,
+# 		vertex.shape=vertex.shape,
+# 		vertex.size=v.size,
+# 		vertex.label.cex=vertex.label.cex)
+#
+# }
 
 
-plot.logic.map <- function(x, png=FALSE, v.size=10, height=1000, width=1000, seed=NULL, png_name="map.png" ,vertex.shape="square",vertex.label.cex=0.5 ,layout=layout_with_dh, xlab=".", ylab=".", cex.lab=0.1){
-
-	if(!is.null(seed))
-		set.seed(seed)
-
-	if(png){
-		png(png_name,
-			height=height,
-			width=width)
-
-		par(x, cex.lab=cex.lab)
-
-	plot(x,
-	layout=layout,
-	vertex.shape=vertex.shape,
-	vertex.size=v.size,
-	vertex.label.cex=vertex.label.cex,
-	xlab=xlab,
-	ylab=ylab
-)
-	 } else{
-		par(x, cex.lab=cex.lab)
-		plot(x,
-		layout=layout,
-		vertex.shape=vertex.shape,
-		vertex.size=v.size,
-		vertex.label.cex=vertex.label.cex,
-		xlab=xlab,
-		ylab=ylab
-
-		)
-	}
-}
 
 
 
