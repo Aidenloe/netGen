@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-#netGen Package
+#networkGen Package
 
 This package is used to generate network mazes. Currently it is at the version 0.1.0.
 

@@ -1,4 +1,4 @@
-Package: netGen
+Package: networkGen
 Type: Package
 Title: Automatic Item Generator
 Version: 0.1.0
