@@ -1,0 +1,19 @@
+---
+output: github_document
+---
+
+#netGen Package
+
+This package is used to generate network mazes. Currently it is at the version 0.1.0.
+
+It can generate mazes of up to two unidirectional arrows currently. 
+
+More to come soon! 
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
