@@ -1,4 +1,4 @@
-#' netGen: A package for generating network type maze
+#' networkGen: A package for generating network type maze
 #' @description The mazeGen package provides functions to generate the Network Mazes. \cr
 #'
 #' The item families are not designed to be increasing difficulty. They are just different at this stage.
@@ -8,7 +8,7 @@
 #'
 #' @references
 #' coming soon
-#' @name netGen
+#' @name networkGen
 NULL
 
 
