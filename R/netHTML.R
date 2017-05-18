@@ -29,7 +29,7 @@
 
 
 netHTML <- function(nodeLogic= NULL, wd = NULL, names=NULL){
-  if(is.null(wd)){
+  if(is.null(nodeLogic)){
     warnings("Please insert nodeLogic.")
   }
 

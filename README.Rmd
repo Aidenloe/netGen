@@ -6,7 +6,12 @@ output: github_document
 
 This package is used to generate network mazes. Currently it is at the version 0.1.0.
 
-It can generate mazes of up to two unidirectional arrows currently in HTML templates.
+The functions will help you to generate trail or circuit type mazes. 
+
+In some of the mazes, unidirectional arrows can be included (Up to 3 arrows). 
+
+Please bear in mind that when it comes to 3 arrows in a maze, the item may not be solvable. Hence, it will be a good idea to set.seed so that you know which maze is cannot be completed successfully. I may introduce some type of algorithm such that the geneated maze with 3 arrows will always be solvable. But that is for further work. 
+
 
 
 More to come soon! 
@@ -22,11 +27,13 @@ knitr::opts_chunk$set(
 ---
 
 R/networkGen is an [R](https://www.r-project.org) package with R functions that are
-useful to me for automatically generating network mazes for research. These two are the most important functions in the package.
+useful to me for automatically generating network mazes for research. These are the most important functions in the package.
 
 - networkGen
     - `netHTML`
+    - `netHTML1arrow`
     - `netHTML2arrows`
+    - `netHTML3arrows`
 
 ---
 

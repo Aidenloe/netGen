@@ -8,8 +8,8 @@
 #' @param nodeLogic This is the connections between the nodes.
 #' @param wd is the working directory to save the HTML source code in. If not given, the file will be saved in the default working directory.
 #' @param names This allows you to put in your own names in the nodes when generating the maze.
-#' @description This function generates an network Maze with at most 2 arrows.
-#' @details This function creates a maze and is saved into your working directory. At most up to 2 arrows per maze is generated.
+#' @description This function generates an network Maze with 2 arrows.
+#' @details This function creates a maze and is saved into your working directory. This is regardless of whether it is a trail or circuit type maze. 2 arrows per maze is generated.
 #' @author Aiden Loe
 #' @title Generate Network Maze (2 arrows)
 #' @examples
@@ -33,7 +33,7 @@
 
 netHTML2arrows <- function(nodeLogic=NULL, wd=NULL, names=NULL){
 
-  if(is.null(wd)){
+  if(is.null(nodeLogic)){
     warnings("Please insert nodeLogic.")
   }
 
@@ -147,12 +147,12 @@ ed
 #### Number of Arrows per maze #####
 # selecting rows randomly to swap around for arrows
 # This needs to change for the java script so that the arrows are highlighted.
-(x <- length(end.node.coord.1))
+(x <- nrow(end.node.coord.1))
 (rowNumber <- sample(x, size=2, replace=FALSE)) # unidirection
 
 uniDirection = 2
 revDirection = 3
-(direction <- rep(1,times=length(end.node.coord.1)))
+(direction <- rep(1,times=nrow(end.node.coord.1)))
 (direction[rowNumber] = c(uniDirection, revDirection))
 
 direction<- cbind(direction)
@@ -241,7 +241,7 @@ edge.list
 
 cat("\n<script>", append = TRUE, file = htmlfile)
 cat(edge.list, append=TRUE, file=htmlfile)
-javaScript <- javaScript(arrowDirect, rowNumber)
+javaScript <- javaScript2Arrows(arrowDirect, rowNumber)
 cat(javaScript, append=TRUE, file=htmlfile)
 
 

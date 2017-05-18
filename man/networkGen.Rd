@@ -9,7 +9,14 @@ The mazeGen package provides functions to generate the Network Mazes. \cr
 The item families are not designed to be increasing difficulty. They are just different at this stage.
 This package is still at its early stages.
 
-Nevertheless, you can start generating your own html network maze by using \code{\link{netHTML}} and \code{\link{netHTML2arrows}}.
+Nevertheless, there are 4 functions in which will help you to start generating your own html network mazes.
+
+\itemize{
+\item{\code{\link{netHTML}}}
+\item{\code{\link{netHTML1arrow}}}
+\item{\code{\link{netHTML2arrows}}}
+\item{\code{\link{netHTML3arrows}}}
+}
 }
 \references{
 coming soon

@@ -1,5 +1,5 @@
 
-javaScript<- function(arrowDirect, rowNumber){
+javaScript2Arrows<- function(arrowDirect, rowNumber){
   arrowDirect
   
   if(exists('arrowDirect')==FALSE){
