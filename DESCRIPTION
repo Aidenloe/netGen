@@ -1,10 +1,12 @@
 Package: networkGen
 Type: Package
-Title: Automatic Item Generator
+Title: Network Maze Generator
 Version: 0.1.0
-Author: Bao Sheng Loe (Aiden) [aut,cre,cph],
+Date: 2017-07-05
+Authors@R: c(person("Bao Sheng", family="Loe (Aiden)", email =
+    "bsl28@cam.ac.uk", role = c("aut", "cre", "cph")))
 Maintainer: Bao Sheng Loe (Aiden) <bsl28@cam.ac.uk>
-Description: A network generator that creates different types of network mazes. 
+Description: A network Maze generator that creates different types of network mazes. 
 License: GPL-3
 Imports:
     igraph,
