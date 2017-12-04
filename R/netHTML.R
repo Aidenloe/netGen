@@ -206,14 +206,3 @@ cat("\n</html>", append = TRUE, file = htmlfile)
 }
 
 
-
-#'#create node logic
-logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 9)
-
-#Folder to save html/
-#setwd("~/desktop")
-#filePath<- getwd()
-
-#Generate item
-set.seed(1)
-netHTML(logic, wd=NULL, names=NULL, concerto="C5")
