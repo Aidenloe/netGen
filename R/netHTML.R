@@ -8,6 +8,7 @@
 #' @param nodeLogic This is the connections between the nodes.
 #' @param wd This is the working directory to save the HTML source code in. If not given, the file will be saved in the default working directory.
 #' @param names This allows you to put in your own names in the nodes when generating the maze.
+#' @param concerto Choose between concerto 4 or concerto 5. CSS scale on concerto 5 is slightly off. So if you are not using concerto, you might want to change the default option to concerto 4 instead.
 #' @description This function generates an network Maze with at most 2 arrows.
 #' @details This function creates a maze and is saved into your working directory. At most up to 2 arrows per maze is generated.
 #' @author Aiden Loe
@@ -23,12 +24,12 @@
 #'
 #' #Generate item
 #' set.seed(1)
-#' netHTML(logic, wd=NULL, names=NULL)
+#' netHTML(logic, wd=NULL, names=NULL, concerto="C5")
 #'
 #'
 
 
-netHTML <- function(nodeLogic= NULL, wd = NULL, names=NULL){
+netHTML <- function(nodeLogic= NULL, wd = NULL, names=NULL, concerto="C5"){
   if(is.null(nodeLogic)){
     warnings("Please insert nodeLogic.")
   }
@@ -40,6 +41,9 @@ netHTML <- function(nodeLogic= NULL, wd = NULL, names=NULL){
   if(is.null(wd)){
     message("HTML file is saved in default working directory.")
   }
+
+  if(concerto != "C4" && concerto !="C5") stop("Please use select either C4 or C5 for the concerto argument.")
+
 ##### html ####
 if(is.null(wd)){
   wd = getwd()
@@ -47,12 +51,18 @@ if(is.null(wd)){
 
 htmlfile = file.path(paste0(wd, "/maze.html"))
 cat("\n<html><head>",file=htmlfile)
-button<- css()
+if(concerto=="C5"){
+button<- cssC5()
+}else{
+  button<- cssC4()
+}
+
+
 cat(button, append=TRUE, file=htmlfile)
 
 cat("\n</head>", append=TRUE, file = htmlfile)
 cat("\n<br>", append=TRUE, file = htmlfile)
-cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:20px;color:#FFF\">Level 1</p>",append=TRUE, file = htmlfile)
+cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:20px;\"><span style=\"color: white;\">Level {{level}} out of {{t_question}}.</span></p>",append=TRUE, file = htmlfile)
 cat("\n<body>", append = TRUE, file = htmlfile)
 cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:14px;\"><font color=\"white\">To solve the puzzle, travel on every path. You can return to the same node but you can only use each path once.</font></p>", append=TRUE, file=htmlfile)
 cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:14px;\"><font color=\"white\">Click on any node to begin.</font></p>", append=TRUE, file=htmlfile)
@@ -97,7 +107,7 @@ cat("\n<div style= 'position:relative;width:auto; height:auto;margin:0 auto' id 
 n.name <-  unlist(V(o)$name)
 buttons = ""
 for (j in 1:nrow(coord.)){
-  buttons <- paste0(buttons,"\n<div onClick='nodeClick(this)' id = '", j,"'", "; class = 'myButton'; style = 'z-index:1; left:",(coord.1[j,1]),"px;top:",(coord.1[j,2]),"px'>",n.name[j],"</div>")
+  buttons <- paste0(buttons,"\n<div onClick='nodeClick(this)' id = '", j,"'", " class = 'myButton' style = 'z-index:1; left:",(coord.1[j,1]),"px; top:",(coord.1[j,2]),"px'>",n.name[j],"</div>")
 }
 cat(buttons, append=TRUE, file=htmlfile)
 buttons
@@ -197,3 +207,13 @@ cat("\n</html>", append = TRUE, file = htmlfile)
 
 
 
+#'#create node logic
+logic <- nodeLogic(value = 8, type= "circuit", itemFamily= 9)
+
+#Folder to save html/
+#setwd("~/desktop")
+#filePath<- getwd()
+
+#Generate item
+set.seed(1)
+netHTML(logic, wd=NULL, names=NULL, concerto="C5")
