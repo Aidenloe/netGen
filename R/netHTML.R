@@ -50,11 +50,10 @@ cat("\n<html><head>",file=htmlfile)
 button<- css()
 cat(button, append=TRUE, file=htmlfile)
 
-cat("\n<html></head>", append=TRUE, file = htmlfile)
+cat("\n</head>", append=TRUE, file = htmlfile)
 cat("\n<br>", append=TRUE, file = htmlfile)
 cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:20px;color:#FFF\">Level 1</p>",append=TRUE, file = htmlfile)
 cat("\n<body>", append = TRUE, file = htmlfile)
-cat("<script src='script.js'></script>",append=TRUE, file=htmlfile)
 cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:14px;\"><font color=\"white\">To solve the puzzle, travel on every path. You can return to the same node but you can only use each path once.</font></p>", append=TRUE, file=htmlfile)
 cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:14px;\"><font color=\"white\">Click on any node to begin.</font></p>", append=TRUE, file=htmlfile)
 
@@ -134,12 +133,31 @@ end.node.coord.1 <- apply(end.node.coord,1:2, function(x) x/1.8) #adjust edge co
 
 
 #### Edges of Nodes
+
 connections = ""
 for (i in 1:nrow(ed)){
-  connections <- paste0(connections," \n linedraw(",start.node.coord.1[i,1],',',start.node.coord.1[i,2],',',end.node.coord.1[i,1],',',end.node.coord.1[i,2],',',paste0('"',ed[i,1],'_',ed[i,2],'"'),")")
-}
+    connections <- paste0(connections,"
+                          <path id=",paste0('"',ed[i,1],'_',ed[i,2],'"'), " d=","\"M",start.node.coord.1[i,1],' ',start.node.coord.1[i,2],' L',end.node.coord.1[i,1],' ',end.node.coord.1[i,2],"\" style=\"stroke:black; stroke-width: 3.25px; fill: none ;\" >
+                          </path> ")
+  }
+
+
+connections
+
+# Step 1 Break into col vectors
+start.node <- ed[,1]
+start.node<- cbind(start.node)
+
+end.node<- ed[,2]
+end.node <- cbind(end.node)
+
+travelled = 0
+
 
 cat("\n<div>", append = TRUE, file=htmlfile)
+cat("\n <svg height=\"610\" width=\"600\">", append=TRUE, file=htmlfile)
+cat(connections, append=TRUE, file=htmlfile)
+cat("\n </svg>", append=TRUE, file=htmlfile)
 cat("\n</div>", append = TRUE, file=htmlfile)
 cat("\n</div>", append = TRUE, file=htmlfile)
 cat("\n</div>", append = TRUE, file=htmlfile)
@@ -151,67 +169,6 @@ cat("\n<input name=\"next\" style=\"display: none;\" type=\"Submit\" value=\"nex
 cat("\n</div>", append = TRUE, file=htmlfile)
 cat("\n<p style =\"width:150px; text-align: center; height:20px; background-color:#fff; border: 1px solid #999\" id=\"output\" hidden></p>", append=TRUE, file=htmlfile)
 
-
-
-
-
-#  Java Script
-## Draw lines without using html5 method (canvas)
-drawLines <- paste0("
-function linedraw(x1, y1, x2, y2, lineid){
-    if(y1 < y2){
-    var pom = y1;
-    y1 = y2;
-    y2 = pom;
-    pom = x1;
-    x1 = x2;
-    x2 = pom;
-    }
-    var length=Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
-
-    var a = Math.abs(x1-x2);
-    var b = Math.abs(y1-y2);
-    var c;
-    var sx = (x1+x2)/2 ;
-    var sy = (y1+y2)/2 ;
-    var width = Math.sqrt(a*a + b*b ) ;
-    var x = sx - width/2;
-    var y = sy;
-
-    a = width / 2;
-
-    c = Math.abs(sx-x);
-
-    b = Math.sqrt(Math.abs(x1-x)*Math.abs(x1-x)+Math.abs(y1-y)*Math.abs(y1-y) );
-
-    var cosb = (b*b - a*a - c*c) / (2*a*c);
-    var rad = Math.acos(cosb);
-    var deg = (rad*180)/Math.PI
-
-    htmlns = \"http://www.w3.org/1999/xhtml\";
-    div = document.createElementNS(htmlns, \"div\");
-    div.setAttribute('id', lineid);
-    div.setAttribute('style','border:2px solid black;width:'+width+'px;height:\" + length + \"px;-moz-transform:rotate('+deg+'deg);-webkit-transform:rotate('+deg+'deg);position:absolute;top:'+y+'px;left:'+x+'px;');
-
-    document.getElementById(\"graphContainer\").appendChild(div);
-
-    } \n
-
-                    ")
-
-
-cat('<script>', append = TRUE, file = htmlfile)
-cat(drawLines, append = TRUE, file = htmlfile)
-
-# Step 1 Break into col vectors
-start.node <- ed[,1]
-start.node<- cbind(start.node)
-
-end.node<- ed[,2]
-end.node <- cbind(end.node)
-
-
-travelled = 0
 
 ##### Step 2 for loop across number of col vectors
 
@@ -227,14 +184,16 @@ for (i in 1:length(start.node)){
 edge.list <- paste0(edge.list,"];")
 edge.list
 
+cat("\n<script>", append = TRUE, file = htmlfile)
 cat(edge.list, append=TRUE, file=htmlfile)
 
 jsDrawLines<- jsDrawLines()
 cat(jsDrawLines, append = TRUE, file = htmlfile)
 
-cat(connections, append=TRUE, file=htmlfile)
-
 cat("\n</script>", append = TRUE, file = htmlfile)
 cat("\n</body>", append = TRUE, file = htmlfile)
 cat("\n</html>", append = TRUE, file = htmlfile)
 }
+
+
+

@@ -54,7 +54,6 @@ netHTML1arrow <- function(nodeLogic=NULL, wd=NULL, names=NULL){
   cat("\n<br>", append=TRUE, file = htmlfile)
   cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:20px;\"><span style=\"color: white;\">Level {{level}} out of {{t_question}}.</span></p>",append=TRUE, file = htmlfile)
   cat("\n<body>", append = TRUE, file = htmlfile)
-  cat("<script src='script.js'></script>",append=TRUE, file=htmlfile)
   cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:14px;\"><font color=\"white\">To solve the puzzle, travel on every path. You can return to the same country but you can only use each path once. ", append=TRUE, file=htmlfile)
   cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:14px;\"><font color=\"white\">You can only go in one direction for those paths with an arrow. </font></p>", append=TRUE, file=htmlfile)
   cat("\n<p align=\"center\" style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:14px;\"><font color=\"white\">Click on any country to begin.</font></p>", append=TRUE, file=htmlfile)
@@ -173,7 +172,7 @@ netHTML1arrow <- function(nodeLogic=NULL, wd=NULL, names=NULL){
                             </path> ")
     }else{
       connections <- paste0(connections,"
-                            <path id=",paste0('"',ed[i,1],'_',ed[i,2],'"'), " d=","\"M",start.node.coord.1[i,1],',',start.node.coord.1[i,2],',L',end.node.coord.1[i,1],',',end.node.coord.1[i,2],"\" style=\"stroke:black; stroke-width: 3.25px; fill: none ;\" >
+                            <path id=",paste0('"',ed[i,1],'_',ed[i,2],'"'), " d=","\"M",start.node.coord.1[i,1],' ',start.node.coord.1[i,2],' L',end.node.coord.1[i,1],' ',end.node.coord.1[i,2],"\" style=\"stroke:black; stroke-width: 3.25px; fill: none ;\" >
                             </path> ")
     }
     }
