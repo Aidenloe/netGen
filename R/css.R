@@ -2,7 +2,8 @@
 
 ## Change the width and height in the .box id.
 ## In C5 it is slightly scaled to the right. so we need to increase the width by 50 and height by 100.
-
+## C5 is deprecated because prezmek fixed the problem.
+## so we will just check to CSS 4 now.
 # adjust padding and margin to make sure there is direct overlap with each other.
 #width:20px;
 #display:inline-block;

@@ -8,7 +8,6 @@
 #' @param nodeLogic This is the connections between the nodes.
 #' @param wd is the working directory to save the HTML source code in. If not given, the file will be saved in the default working directory.
 #' @param names This allows you to put in your own names in the nodes when generating the maze.
-#' @param concerto Choose between concerto 4 or concerto 5. So if you are not using concerto, you might want to change the default option to concerto 4 instead.
 #' @description This function generates an network Maze with 3 arrows.
 #' @details This function creates a maze and is saved into your working directory. This is regardless of whether it is a trail or circuit type maze. 3 arrows per maze is generated. Bearing in mind that with 3 arrows, the maze may not always be solved. Hence, it still requires checking prior to using it as a test.
 #' @author Aiden Loe
@@ -27,12 +26,12 @@
 #'
 #' #Generate item
 #' set.seed(1)
-#' netHTML3arrows(logic, wd=NULL, names = countries,concerto="C5")
+#' netHTML3arrows(logic, wd=NULL, names = countries)
 #'
 #'
 
 
-netHTML3arrows <- function(nodeLogic=NULL, wd=NULL, names=NULL, concerto="C5"){
+netHTML3arrows <- function(nodeLogic=NULL, wd=NULL, names=NULL){
 
 
   if(is.null(nodeLogic)){
@@ -43,8 +42,6 @@ netHTML3arrows <- function(nodeLogic=NULL, wd=NULL, names=NULL, concerto="C5"){
     message("HTML file is saved in default working directory.")
   }
 
-  if(concerto != "C4" && concerto !="C5") stop("Please use select either C4 or C5 for the concerto argument.")
-
   ##### html ####
   if(is.null(wd)){
     wd = getwd()
@@ -53,11 +50,8 @@ netHTML3arrows <- function(nodeLogic=NULL, wd=NULL, names=NULL, concerto="C5"){
   htmlfile = file.path(paste0(wd, "/maze.html"))
 
   cat("\n<html><head>",file=htmlfile)
-  if(concerto=="C5"){
-    button<- cssC5()
-  }else{
     button<- cssC4()
-  }
+
 
   cat("\n<html><head>",file=htmlfile)
   cat(button, append=TRUE, file=htmlfile)
